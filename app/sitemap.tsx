@@ -6,7 +6,23 @@ import data from "@/components/Content/subDomainUrlContent.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const BaseUrl = contentData.baseUrl
+  // const CityData: any = CityData1;
   const SubDomain:any = Object.keys(data)
+  // const StateUrl: any = State.map((location: { slug: any }) => ({
+  //   url: `/${location.slug.split(" ").join("-").toLowerCase()}`,
+  //   lastModified: new Date(),
+  //   changeFrequency: "weekly",
+  //   priority: 0.9,
+  // }));
+
+  // const CityUrl:any = Object.keys(CityData).flatMap((state) => {
+  //   return CityData[state].map((city: { slug: string; }) => ({
+  //     url: `/${state.toLowerCase()}/${city.slug.split(" ").join("-").toLowerCase()}`,
+  //     lastModified: new Date(),
+  //     changeFrequency: "weekly",
+  //     priority: 0.9,
+  //   }));
+  // });
 
   
   const SubDomainURL = SubDomain.map((location :any) => ({
@@ -41,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${contentData.baseUrl}blogs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${contentData.baseUrl}contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -51,6 +73,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
-    },   
+    },
+    {
+      url: `${contentData.baseUrl}blogs/sitemap.xml`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+   
   ]
 }
